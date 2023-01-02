@@ -1,0 +1,516 @@
+@import "config";
+
+nav {
+  padding: 1rem 5rem;
+  position: fixed;
+  height: 4rem;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 8;
+  background: $secondary-color;
+  .holder {
+    width: 30%;
+  }
+  form {
+    width: 30%;
+    input {
+      background: lighten($color: $secondary-color, $amount: 5);
+      color: $base-color;
+    }
+  }
+  .side-nav {
+    width: 40%;
+    padding: 0 3rem;
+    a {
+      margin: 0 1rem;
+    }
+  }
+}
+
+main {
+  &#landing-page {
+    .container {
+      padding: 0 2rem;
+      height: 100vh;
+      position: relative;
+      section {
+        &#navbar {
+          padding: 3rem 1rem 2rem 1rem;
+          position: fixed;
+          height: 100vh;
+          width: 20%;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          z-index: 5;
+          .profile-wrapper {
+            padding: 1rem 0;
+            img {
+              height: 5rem;
+              width: 5rem;
+              border-radius: 50%;
+              border: 0.2rem solid $primary-color;
+            }
+            .profile {
+              padding: 1rem;
+              p {
+                margin: 0.3rem 0 0 0;
+              }
+            }
+          }
+          .companies-wrapper {
+            padding: 1rem 0;
+            .company-wrapper {
+              width: 100%;
+              background: lighten($color: $secondary-color, $amount: 5);
+              padding: 0.3rem;
+              border-radius: 0.5rem;
+              margin: 0.5rem 0;
+              position: relative;
+              cursor: pointer;
+              &.unread-messages {
+                border: 2px solid $primary-color;
+              }
+              &.active {
+                background: $primary-color;
+                h4 {
+                  color: $base-color-2;
+                }
+                p {
+                  &.num {
+                    color: $primary-color;
+                    background: $secondary-color;
+                  }
+                }
+              }
+              &:hover {
+                background: $primary-color;
+              }
+              img {
+                height: 2rem;
+                width: 2rem;
+                border-radius: 50%;
+                object-fit: cover;
+              }
+              h4 {
+                margin: 0.5rem;
+              }
+              p {
+                &.num {
+                  position: absolute;
+                  background: $primary-color;
+                  padding: 0.1rem 0.3rem 0.1rem 0.2rem;
+                  width: 1rem;
+                  top: 0.7rem;
+                  color: $base-color-2;
+                  height: auto;
+                  border-radius: 0.2rem;
+                  right: 0.5rem;
+                }
+              }
+            }
+          }
+          footer {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            padding: 2rem 1rem;
+            .social-wrapper {
+              padding: 2rem 1rem;
+              a {
+                margin: 0 1rem;
+                i {
+                  font-size: 1.3rem;
+                }
+              }
+            }
+          }
+        }
+        &#messages {
+          position: fixed;
+          top: 4rem;
+          left: 20%;
+          right: 0;
+          bottom: 0;
+          height: 80vh;
+          z-index: 2;
+          padding: 1rem;
+          .messages-nav {
+            width: 100%;
+            position: relative;
+            ul {
+              width: 50%;
+              li {
+                position: relative;
+                padding: 0.2rem 2rem 0.2rem 0.5rem;
+                // border-radius: 0.3rem;
+                margin: 0 0.5rem 0 0;
+                width: 40%;
+                cursor: pointer;
+                i {
+                  font-size: 1.4rem;
+                }
+                a {
+                  margin: 0 1rem 0 0.5rem;
+                }
+                p {
+                  &.num {
+                    position: absolute;
+                    background: $primary-color;
+                    padding: 0.1rem 0.2rem;
+                    height: auto;
+                    width: 1rem;
+                    font-size: 0.9rem;
+                    color: $base-color-2;
+                    border-radius: 0.2rem;
+                    right: 0.3rem;
+                  }
+                }
+                &:hover {
+                  border-bottom: 0.15rem solid #cacaca;
+                }
+                &.active {
+                  border-bottom: 0.15rem solid $primary-color;
+                }
+              }
+            }
+            .wrapper {
+              width: 50%;
+              span {
+                p.error {
+                  color: red;
+                  margin: 0.5rem 0 0 0;
+                  font-weight: bold;
+                }
+                &:nth-child(1) {
+                  width: 30%;
+                }
+                &:nth-child(2) {
+                  width: 70%;
+                }
+                input {
+                  width: 100%;
+                  padding: 0.5rem 1rem;
+                  background: lighten($color: $secondary-color, $amount: 5);
+                  color: $base-color;
+                  border-radius: 0;
+                  border-top-right-radius: 0.3rem;
+                  border-bottom-right-radius: 0.3rem;
+                  &.error {
+                    border-color: red;
+                  }
+                }
+                button {
+                  width: 100%;
+                  border-radius: 0;
+                  border-top-left-radius: 0.3rem;
+                  border-bottom-left-radius: 0.3rem;
+                  cursor: pointer;
+                  &:hover {
+                    padding: 0.5rem 1rem !important;
+                  }
+                }
+              }
+            }
+            .company-list-wrapper {
+              width: 20rem;
+              padding: 1rem;
+              background: #cacaca;
+              border-radius: 0.3rem;
+              top: 4rem;
+              z-index: 3;
+              visibility: hidden;
+              transform: translate3d(0, -100%, 0);
+              &.show {
+                visibility: visible;
+                transform: translate3d(0, 0, 0);
+              }
+              h4 {
+                color: #5f5f5f;
+              }
+              .results-wrapper {
+                padding: 0.5rem 0;
+                h5 {
+                  width: 100%;
+                  padding: 0.3rem;
+                  color: $base-color;
+                  border-radius: 0.2rem;
+                  cursor: pointer;
+                  &:hover {
+                    background: $base-color-2;
+                  }
+                }
+              }
+            }
+          }
+          .messages-content {
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            margin: 1rem 0;
+            border-radius: 0.3rem;
+            position: relative;
+            section {
+              &#mail-tab {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                display: none;
+                overflow: auto;
+                padding: 1rem 0;
+                &.active {
+                  display: block;
+                }
+                p.empty-mail {
+                  padding: 1rem 0;
+                  color: #5f5f5f;
+                  font-style: italic;
+                  margin: 15%;
+                  font-size: 1.2rem;
+                  font-weight: bolder;
+                }
+                section {
+                  &.empty-mail {
+                    p {
+                      padding: 1rem 0;
+                      color: #5f5f5f;
+                      font-style: italic;
+                      margin: 15%;
+                      font-size: 1.2rem;
+                      font-weight: bolder;
+                    }
+                  }
+                  &.mail {
+                    padding: 1rem 1rem 0 1rem;
+                    border-radius: 0.5rem;
+                    overflow: auto;
+                    &:nth-child(1) {
+                      padding: 0 1rem;
+                    }
+                    &.unread {
+                      .mail-wrapper {
+                        border: 2px solid $primary-color;
+                      }
+                    }
+                    h3,
+                    p {
+                      color: $base-color;
+                    }
+                    .mail-wrapper {
+                      padding: 1rem;
+                      cursor: pointer;
+                      background: $secondary-color;
+                      border-radius: 0.5rem;
+                      position: relative;
+                      width: 100%;
+                      &.read {
+                        padding: 2rem 1rem 5rem 1rem;
+                        height: auto;
+                        p {
+                          overflow: visible;
+                          text-overflow: unset;
+                          max-height: auto;
+                          line-height: normal;
+                          display: block;
+                        }
+                      }
+                      p {
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 2; /* number of lines to show */
+                        line-height: 1; /* fallback */
+                        max-height: 1 * 2;
+                        margin: 0.3rem 0;
+                      }
+                      h5 {
+                        color: $base-color;
+                        position: absolute;
+                        right: 2rem;
+                        top: 1rem;
+                      }
+                    }
+                  }
+                }
+              }
+              &#chat-tab {
+                position: absolute;
+                height: 100%;
+                border-radius: 0.5rem;
+                // background: #eeeeee;
+                width: 100%;
+                display: none;
+                &.active {
+                  display: block;
+                }
+                p.empty-chat {
+                  padding: 1rem 0;
+                  color: #5f5f5f;
+                  font-style: italic;
+                  margin: 15%;
+                  font-size: 1.2rem;
+                  font-weight: bolder;
+                }
+                section {
+                  &.chat {
+                    height: 100%;
+                    position: relative;
+                    .chat-wrapper {
+                      width: 100%;
+                      height: 88%;
+                      position: absolute;
+                      &.tab-increase {
+                        height: 70%;
+                      }
+                      section {
+                        &.empty-chat {
+                          p {
+                            padding: 1rem 0;
+                            color: #5f5f5f;
+                            font-style: italic;
+                            margin: 20%;
+                            font-size: 1.2rem;
+                            font-weight: bolder;
+                          }
+                        }
+                        &.chat-messages {
+                          padding: 1rem;
+                        }
+                      }
+                    }
+                    .message-send-wrapper {
+                      width: 100%;
+                      height: 12%;
+                      left: 0;
+                      right: 0;
+                      bottom: 0;
+                      position: absolute;
+                      padding: 0.5rem 3rem;
+                      background: darken($color: $secondary-color, $amount: 5);
+                      justify-content: space-evenly;
+                      border-bottom-left-radius: 0.3rem;
+                      border-bottom-right-radius: 0.3rem;
+                      &.tab-increase {
+                        height: 30%;
+                      }
+                      .icon-btn {
+                        cursor: pointer;
+                      }
+                      .input {
+                        padding: 0.5rem 1rem;
+                        width: 90%;
+                        textarea {
+                          width: 100%;
+                          background: lighten(
+                            $color: $secondary-color,
+                            $amount: 5
+                          );
+                          margin: 0;
+                        }
+                      }
+                      .btn-wrapper {
+                        width: 2%;
+                        padding: 1rem 2rem;
+                        i {
+                          cursor: pointer;
+                        }
+                      }
+                    }
+                    h3,
+                    p {
+                      color: $base-color;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &#signin,
+  &#signup {
+    padding: 8rem 10rem 5rem 10rem;
+    background: #eeeeee;
+    height: 100%;
+    h3 {
+      color: $base-color;
+      margin: 0.3rem 0;
+    }
+    form {
+      background: $secondary-color;
+      margin: 1rem 5rem;
+      padding: 3rem 5rem;
+      border-radius: 1rem;
+      .wrapper {
+        padding: 0 0 1rem 0;
+      }
+      .form-group {
+        padding: 1rem 0;
+        .input {
+          position: relative;
+          .icon {
+            position: absolute;
+            top: 2rem;
+            left: 0.5rem;
+          }
+          input,
+          select {
+            margin: 0.5rem 0;
+            padding: 0.35rem 1rem 0.35rem 2rem;
+          }
+          p.error {
+            color: red;
+          }
+        }
+      }
+      .social-auth-wrapper {
+        padding: 2rem 5rem;
+        h3 {
+          color: $base-color-2;
+        }
+        .flx {
+          padding: 1rem 0;
+          flex-direction: column;
+          a {
+            margin: 1rem 5rem;
+            padding: 0.4rem 9rem;
+            font-size: 1.2rem;
+            &.google-sign-in {
+              background: #667db6;
+              background: -webkit-linear-gradient(
+                to right,
+                #db4437,
+                #f4b400,
+                #0f9d58,
+                #4285f4
+              );
+              background: linear-gradient(
+                to right,
+                #db4437,
+                #f4b400,
+                #0f9d58,
+                #4285f4
+              );
+            }
+            &.github-sign-in {
+              background: $base-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  padding: 2rem 3rem;
+}
+
+@import "mobile";

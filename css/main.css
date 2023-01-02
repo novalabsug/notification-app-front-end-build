@@ -1,0 +1,1184 @@
+@font-face {
+  font-family: lato;
+  src: url(/fonts/Lato-Light.ttf);
+}
+
+@font-face {
+  font-family: karla;
+  src: url(../fonts/Karla/static/Karla-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: karla-bold;
+  src: url(../fonts/Karla/static/Karla-Bold.ttf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 1rem;
+  font-family: karla;
+  color: #000;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+i {
+  color: #cecece;
+}
+
+.bold-txt {
+  font-weight: bold;
+}
+
+.primary-color {
+  color: #1a7cb4;
+}
+
+.secondary-color {
+  color: #cecece;
+}
+
+i {
+  color: #1a7cb4;
+  font-size: 1.3rem;
+}
+
+body {
+  background-color: #cecece;
+}
+
+img {
+  width: 100%;
+}
+
+#modal-form {
+  position: absolute;
+}
+
+input,
+select,
+textarea {
+  padding: 0.35rem 0.8rem;
+  border-radius: 0.3rem;
+  border: none;
+  outline: none;
+  width: 100%;
+  background: #dbdbdb;
+}
+
+.center-align {
+  text-align: center;
+}
+
+.flx {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flx.jc-btn {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flx.js-evn {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.flx.js-arnd {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.flx.jc-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flx.jc-end {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.grd {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.grd.grd-cl-1 {
+  -ms-grid-columns: (1fr)[1];
+      grid-template-columns: repeat(1, 1fr);
+}
+
+.grd.grd-cl-2 {
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+}
+
+.grd.grd-cl-3 {
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+.grd.grd-cl-4 {
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+}
+
+.grd.grd-cl-5 {
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+}
+
+.grd.grd-cl-6 {
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
+}
+
+.grd.grd-cl-7 {
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.bx-sdw {
+  -webkit-box-shadow: 0 10px 6px -6px #141414;
+          box-shadow: 0 10px 6px -6px #141414;
+}
+
+h1.f-size-reg,
+h2.f-size-reg,
+h3.f-size-reg,
+h4.f-size-reg,
+h5.f-size-reg {
+  font-size: 1.2rem;
+}
+
+h1.f-size-med,
+h2.f-size-med,
+h3.f-size-med,
+h4.f-size-med,
+h5.f-size-med {
+  font-size: 1.3rem;
+}
+
+h1.f-size-lrg,
+h2.f-size-lrg,
+h3.f-size-lrg,
+h4.f-size-lrg,
+h5.f-size-lrg {
+  font-size: 1.5rem;
+}
+
+h1.f-size-xlrg,
+h2.f-size-xlrg,
+h3.f-size-xlrg,
+h4.f-size-xlrg,
+h5.f-size-xlrg {
+  font-size: 2rem;
+}
+
+h1.f-size-xxlrg,
+h2.f-size-xxlrg,
+h3.f-size-xxlrg,
+h4.f-size-xxlrg,
+h5.f-size-xxlrg {
+  font-size: 2.5rem;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+.btn {
+  padding: 0.5rem 1.2rem;
+  background-color: #1a7cb4;
+  color: #fff;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.btn.btn-m {
+  padding: 0.7rem 1.5rem;
+}
+
+.btn.btn-rounded {
+  padding: 1rem;
+  border-radius: 50%;
+}
+
+.btn:hover {
+  padding: 0.6rem 1.3rem;
+}
+
+.notification-msg-card {
+  position: fixed;
+  top: 5rem;
+  left: 5rem;
+  width: 400px;
+  z-index: 100;
+  visibility: hidden;
+  -webkit-transform: translate3d(0, -100%, 0);
+          transform: translate3d(0, -100%, 0);
+}
+
+.notification-msg-card.show {
+  visibility: visible;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.notification-msg-card .hdr {
+  padding: 1.3rem 0;
+  background: #c6c6c6;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.notification-msg-card .body {
+  padding: 2rem 1rem 2rem 1rem;
+  background: #f5f4f4;
+}
+
+.notification-msg-card .footer {
+  padding: 1rem 0 1rem 0;
+  background: #f5f4f4;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  position: relative;
+}
+
+.notification-msg-card .footer a {
+  position: absolute;
+  bottom: 1rem;
+}
+
+.notification-msg-card .footer a:nth-child(1) {
+  left: 2rem;
+}
+
+.notification-msg-card .footer a:nth-child(2) {
+  right: 2rem;
+}
+
+nav {
+  padding: 1rem 5rem;
+  position: fixed;
+  height: 4rem;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 8;
+  background: #cecece;
+}
+
+nav .holder {
+  width: 30%;
+}
+
+nav form {
+  width: 30%;
+}
+
+nav form input {
+  background: #dbdbdb;
+  color: #000;
+}
+
+nav .side-nav {
+  width: 40%;
+  padding: 0 3rem;
+}
+
+nav .side-nav a {
+  margin: 0 1rem;
+}
+
+main#landing-page .container {
+  padding: 0 2rem;
+  height: 100vh;
+  position: relative;
+}
+
+main#landing-page .container section#navbar {
+  padding: 3rem 1rem 2rem 1rem;
+  position: fixed;
+  height: 100vh;
+  width: 20%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+}
+
+main#landing-page .container section#navbar .profile-wrapper {
+  padding: 1rem 0;
+}
+
+main#landing-page .container section#navbar .profile-wrapper img {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  border: 0.2rem solid #1a7cb4;
+}
+
+main#landing-page .container section#navbar .profile-wrapper .profile {
+  padding: 1rem;
+}
+
+main#landing-page .container section#navbar .profile-wrapper .profile p {
+  margin: 0.3rem 0 0 0;
+}
+
+main#landing-page .container section#navbar .companies-wrapper {
+  padding: 1rem 0;
+}
+
+main#landing-page .container section#navbar .companies-wrapper .company-wrapper {
+  width: 100%;
+  background: #dbdbdb;
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+  margin: 0.5rem 0;
+  position: relative;
+  cursor: pointer;
+}
+
+main#landing-page .container section#navbar .companies-wrapper .company-wrapper.unread-messages {
+  border: 2px solid #1a7cb4;
+}
+
+main#landing-page .container section#navbar .companies-wrapper .company-wrapper.active {
+  background: #1a7cb4;
+}
+
+main#landing-page .container section#navbar .companies-wrapper .company-wrapper.active h4 {
+  color: #fff;
+}
+
+main#landing-page .container section#navbar .companies-wrapper .company-wrapper.active p.num {
+  color: #1a7cb4;
+  background: #cecece;
+}
+
+main#landing-page .container section#navbar .companies-wrapper .company-wrapper:hover {
+  background: #1a7cb4;
+}
+
+main#landing-page .container section#navbar .companies-wrapper .company-wrapper img {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main#landing-page .container section#navbar .companies-wrapper .company-wrapper h4 {
+  margin: 0.5rem;
+}
+
+main#landing-page .container section#navbar .companies-wrapper .company-wrapper p.num {
+  position: absolute;
+  background: #1a7cb4;
+  padding: 0.1rem 0.3rem 0.1rem 0.2rem;
+  width: 1rem;
+  top: 0.7rem;
+  color: #fff;
+  height: auto;
+  border-radius: 0.2rem;
+  right: 0.5rem;
+}
+
+main#landing-page .container section#navbar footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 2rem 1rem;
+}
+
+main#landing-page .container section#navbar footer .social-wrapper {
+  padding: 2rem 1rem;
+}
+
+main#landing-page .container section#navbar footer .social-wrapper a {
+  margin: 0 1rem;
+}
+
+main#landing-page .container section#navbar footer .social-wrapper a i {
+  font-size: 1.3rem;
+}
+
+main#landing-page .container section#messages {
+  position: fixed;
+  top: 4rem;
+  left: 20%;
+  right: 0;
+  bottom: 0;
+  height: 80vh;
+  z-index: 2;
+  padding: 1rem;
+}
+
+main#landing-page .container section#messages .messages-nav {
+  width: 100%;
+  position: relative;
+}
+
+main#landing-page .container section#messages .messages-nav ul {
+  width: 50%;
+}
+
+main#landing-page .container section#messages .messages-nav ul li {
+  position: relative;
+  padding: 0.2rem 2rem 0.2rem 0.5rem;
+  margin: 0 0.5rem 0 0;
+  width: 40%;
+  cursor: pointer;
+}
+
+main#landing-page .container section#messages .messages-nav ul li i {
+  font-size: 1.4rem;
+}
+
+main#landing-page .container section#messages .messages-nav ul li a {
+  margin: 0 1rem 0 0.5rem;
+}
+
+main#landing-page .container section#messages .messages-nav ul li p.num {
+  position: absolute;
+  background: #1a7cb4;
+  padding: 0.1rem 0.2rem;
+  height: auto;
+  width: 1rem;
+  font-size: 0.9rem;
+  color: #fff;
+  border-radius: 0.2rem;
+  right: 0.3rem;
+}
+
+main#landing-page .container section#messages .messages-nav ul li:hover {
+  border-bottom: 0.15rem solid #cacaca;
+}
+
+main#landing-page .container section#messages .messages-nav ul li.active {
+  border-bottom: 0.15rem solid #1a7cb4;
+}
+
+main#landing-page .container section#messages .messages-nav .wrapper {
+  width: 50%;
+}
+
+main#landing-page .container section#messages .messages-nav .wrapper span p.error {
+  color: red;
+  margin: 0.5rem 0 0 0;
+  font-weight: bold;
+}
+
+main#landing-page .container section#messages .messages-nav .wrapper span:nth-child(1) {
+  width: 30%;
+}
+
+main#landing-page .container section#messages .messages-nav .wrapper span:nth-child(2) {
+  width: 70%;
+}
+
+main#landing-page .container section#messages .messages-nav .wrapper span input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background: #dbdbdb;
+  color: #000;
+  border-radius: 0;
+  border-top-right-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+}
+
+main#landing-page .container section#messages .messages-nav .wrapper span input.error {
+  border-color: red;
+}
+
+main#landing-page .container section#messages .messages-nav .wrapper span button {
+  width: 100%;
+  border-radius: 0;
+  border-top-left-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem;
+  cursor: pointer;
+}
+
+main#landing-page .container section#messages .messages-nav .wrapper span button:hover {
+  padding: 0.5rem 1rem !important;
+}
+
+main#landing-page .container section#messages .messages-nav .company-list-wrapper {
+  width: 20rem;
+  padding: 1rem;
+  background: #cacaca;
+  border-radius: 0.3rem;
+  top: 4rem;
+  z-index: 3;
+  visibility: hidden;
+  -webkit-transform: translate3d(0, -100%, 0);
+          transform: translate3d(0, -100%, 0);
+}
+
+main#landing-page .container section#messages .messages-nav .company-list-wrapper.show {
+  visibility: visible;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+main#landing-page .container section#messages .messages-nav .company-list-wrapper h4 {
+  color: #5f5f5f;
+}
+
+main#landing-page .container section#messages .messages-nav .company-list-wrapper .results-wrapper {
+  padding: 0.5rem 0;
+}
+
+main#landing-page .container section#messages .messages-nav .company-list-wrapper .results-wrapper h5 {
+  width: 100%;
+  padding: 0.3rem;
+  color: #000;
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+
+main#landing-page .container section#messages .messages-nav .company-list-wrapper .results-wrapper h5:hover {
+  background: #fff;
+}
+
+main#landing-page .container section#messages .messages-content {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  margin: 1rem 0;
+  border-radius: 0.3rem;
+  position: relative;
+}
+
+main#landing-page .container section#messages .messages-content section#mail-tab {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: none;
+  overflow: auto;
+  padding: 1rem 0;
+}
+
+main#landing-page .container section#messages .messages-content section#mail-tab.active {
+  display: block;
+}
+
+main#landing-page .container section#messages .messages-content section#mail-tab p.empty-mail {
+  padding: 1rem 0;
+  color: #5f5f5f;
+  font-style: italic;
+  margin: 15%;
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+
+main#landing-page .container section#messages .messages-content section#mail-tab section.empty-mail p {
+  padding: 1rem 0;
+  color: #5f5f5f;
+  font-style: italic;
+  margin: 15%;
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+
+main#landing-page .container section#messages .messages-content section#mail-tab section.mail {
+  padding: 1rem 1rem 0 1rem;
+  border-radius: 0.5rem;
+  overflow: auto;
+}
+
+main#landing-page .container section#messages .messages-content section#mail-tab section.mail:nth-child(1) {
+  padding: 0 1rem;
+}
+
+main#landing-page .container section#messages .messages-content section#mail-tab section.mail.unread .mail-wrapper {
+  border: 2px solid #1a7cb4;
+}
+
+main#landing-page .container section#messages .messages-content section#mail-tab section.mail h3,
+main#landing-page .container section#messages .messages-content section#mail-tab section.mail p {
+  color: #000;
+}
+
+main#landing-page .container section#messages .messages-content section#mail-tab section.mail .mail-wrapper {
+  padding: 1rem;
+  cursor: pointer;
+  background: #cecece;
+  border-radius: 0.5rem;
+  position: relative;
+  width: 100%;
+}
+
+main#landing-page .container section#messages .messages-content section#mail-tab section.mail .mail-wrapper.read {
+  padding: 2rem 1rem 5rem 1rem;
+  height: auto;
+}
+
+main#landing-page .container section#messages .messages-content section#mail-tab section.mail .mail-wrapper.read p {
+  overflow: visible;
+  text-overflow: unset;
+  max-height: auto;
+  line-height: normal;
+  display: block;
+}
+
+main#landing-page .container section#messages .messages-content section#mail-tab section.mail .mail-wrapper p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  /* number of lines to show */
+  line-height: 1;
+  /* fallback */
+  max-height: 2;
+  margin: 0.3rem 0;
+}
+
+main#landing-page .container section#messages .messages-content section#mail-tab section.mail .mail-wrapper h5 {
+  color: #000;
+  position: absolute;
+  right: 2rem;
+  top: 1rem;
+}
+
+main#landing-page .container section#messages .messages-content section#chat-tab {
+  position: absolute;
+  height: 100%;
+  border-radius: 0.5rem;
+  width: 100%;
+  display: none;
+}
+
+main#landing-page .container section#messages .messages-content section#chat-tab.active {
+  display: block;
+}
+
+main#landing-page .container section#messages .messages-content section#chat-tab p.empty-chat {
+  padding: 1rem 0;
+  color: #5f5f5f;
+  font-style: italic;
+  margin: 15%;
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+
+main#landing-page .container section#messages .messages-content section#chat-tab section.chat {
+  height: 100%;
+  position: relative;
+}
+
+main#landing-page .container section#messages .messages-content section#chat-tab section.chat .chat-wrapper {
+  width: 100%;
+  height: 88%;
+  position: absolute;
+}
+
+main#landing-page .container section#messages .messages-content section#chat-tab section.chat .chat-wrapper.tab-increase {
+  height: 70%;
+}
+
+main#landing-page .container section#messages .messages-content section#chat-tab section.chat .chat-wrapper section.empty-chat p {
+  padding: 1rem 0;
+  color: #5f5f5f;
+  font-style: italic;
+  margin: 20%;
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+
+main#landing-page .container section#messages .messages-content section#chat-tab section.chat .chat-wrapper section.chat-messages {
+  padding: 1rem;
+}
+
+main#landing-page .container section#messages .messages-content section#chat-tab section.chat .message-send-wrapper {
+  width: 100%;
+  height: 12%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  padding: 0.5rem 3rem;
+  background: #c1c1c1;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+}
+
+main#landing-page .container section#messages .messages-content section#chat-tab section.chat .message-send-wrapper.tab-increase {
+  height: 30%;
+}
+
+main#landing-page .container section#messages .messages-content section#chat-tab section.chat .message-send-wrapper .icon-btn {
+  cursor: pointer;
+}
+
+main#landing-page .container section#messages .messages-content section#chat-tab section.chat .message-send-wrapper .input {
+  padding: 0.5rem 1rem;
+  width: 90%;
+}
+
+main#landing-page .container section#messages .messages-content section#chat-tab section.chat .message-send-wrapper .input textarea {
+  width: 100%;
+  background: #dbdbdb;
+  margin: 0;
+}
+
+main#landing-page .container section#messages .messages-content section#chat-tab section.chat .message-send-wrapper .btn-wrapper {
+  width: 2%;
+  padding: 1rem 2rem;
+}
+
+main#landing-page .container section#messages .messages-content section#chat-tab section.chat .message-send-wrapper .btn-wrapper i {
+  cursor: pointer;
+}
+
+main#landing-page .container section#messages .messages-content section#chat-tab section.chat h3,
+main#landing-page .container section#messages .messages-content section#chat-tab section.chat p {
+  color: #000;
+}
+
+main#signin, main#signup {
+  padding: 8rem 10rem 5rem 10rem;
+  background: #eeeeee;
+  height: 100%;
+}
+
+main#signin h3, main#signup h3 {
+  color: #000;
+  margin: 0.3rem 0;
+}
+
+main#signin form, main#signup form {
+  background: #cecece;
+  margin: 1rem 5rem;
+  padding: 3rem 5rem;
+  border-radius: 1rem;
+}
+
+main#signin form .wrapper, main#signup form .wrapper {
+  padding: 0 0 1rem 0;
+}
+
+main#signin form .form-group, main#signup form .form-group {
+  padding: 1rem 0;
+}
+
+main#signin form .form-group .input, main#signup form .form-group .input {
+  position: relative;
+}
+
+main#signin form .form-group .input .icon, main#signup form .form-group .input .icon {
+  position: absolute;
+  top: 2rem;
+  left: 0.5rem;
+}
+
+main#signin form .form-group .input input,
+main#signin form .form-group .input select, main#signup form .form-group .input input,
+main#signup form .form-group .input select {
+  margin: 0.5rem 0;
+  padding: 0.35rem 1rem 0.35rem 2rem;
+}
+
+main#signin form .form-group .input p.error, main#signup form .form-group .input p.error {
+  color: red;
+}
+
+main#signin form .social-auth-wrapper, main#signup form .social-auth-wrapper {
+  padding: 2rem 5rem;
+}
+
+main#signin form .social-auth-wrapper h3, main#signup form .social-auth-wrapper h3 {
+  color: #fff;
+}
+
+main#signin form .social-auth-wrapper .flx, main#signup form .social-auth-wrapper .flx {
+  padding: 1rem 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main#signin form .social-auth-wrapper .flx a, main#signup form .social-auth-wrapper .flx a {
+  margin: 1rem 5rem;
+  padding: 0.4rem 9rem;
+  font-size: 1.2rem;
+}
+
+main#signin form .social-auth-wrapper .flx a.google-sign-in, main#signup form .social-auth-wrapper .flx a.google-sign-in {
+  background: #667db6;
+  background: -webkit-gradient(linear, left top, right top, from(#db4437), color-stop(#f4b400), color-stop(#0f9d58), to(#4285f4));
+  background: linear-gradient(to right, #db4437, #f4b400, #0f9d58, #4285f4);
+}
+
+main#signin form .social-auth-wrapper .flx a.github-sign-in, main#signup form .social-auth-wrapper .flx a.github-sign-in {
+  background: #000;
+}
+
+footer {
+  padding: 2rem 3rem;
+}
+
+@font-face {
+  font-family: lato;
+  src: url(/fonts/Lato-Light.ttf);
+}
+
+@font-face {
+  font-family: karla;
+  src: url(../fonts/Karla/static/Karla-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: karla-bold;
+  src: url(../fonts/Karla/static/Karla-Bold.ttf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 1rem;
+  font-family: karla;
+  color: #000;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+i {
+  color: #cecece;
+}
+
+.bold-txt {
+  font-weight: bold;
+}
+
+.primary-color {
+  color: #1a7cb4;
+}
+
+.secondary-color {
+  color: #cecece;
+}
+
+i {
+  color: #1a7cb4;
+  font-size: 1.3rem;
+}
+
+body {
+  background-color: #cecece;
+}
+
+img {
+  width: 100%;
+}
+
+#modal-form {
+  position: absolute;
+}
+
+input,
+select,
+textarea {
+  padding: 0.35rem 0.8rem;
+  border-radius: 0.3rem;
+  border: none;
+  outline: none;
+  width: 100%;
+  background: #dbdbdb;
+}
+
+.center-align {
+  text-align: center;
+}
+
+.flx {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flx.jc-btn {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flx.js-evn {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.flx.js-arnd {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.flx.jc-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flx.jc-end {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.grd {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.grd.grd-cl-1 {
+  -ms-grid-columns: (1fr)[1];
+      grid-template-columns: repeat(1, 1fr);
+}
+
+.grd.grd-cl-2 {
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+}
+
+.grd.grd-cl-3 {
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+.grd.grd-cl-4 {
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+}
+
+.grd.grd-cl-5 {
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+}
+
+.grd.grd-cl-6 {
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
+}
+
+.grd.grd-cl-7 {
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.bx-sdw {
+  -webkit-box-shadow: 0 10px 6px -6px #141414;
+          box-shadow: 0 10px 6px -6px #141414;
+}
+
+h1.f-size-reg,
+h2.f-size-reg,
+h3.f-size-reg,
+h4.f-size-reg,
+h5.f-size-reg {
+  font-size: 1.2rem;
+}
+
+h1.f-size-med,
+h2.f-size-med,
+h3.f-size-med,
+h4.f-size-med,
+h5.f-size-med {
+  font-size: 1.3rem;
+}
+
+h1.f-size-lrg,
+h2.f-size-lrg,
+h3.f-size-lrg,
+h4.f-size-lrg,
+h5.f-size-lrg {
+  font-size: 1.5rem;
+}
+
+h1.f-size-xlrg,
+h2.f-size-xlrg,
+h3.f-size-xlrg,
+h4.f-size-xlrg,
+h5.f-size-xlrg {
+  font-size: 2rem;
+}
+
+h1.f-size-xxlrg,
+h2.f-size-xxlrg,
+h3.f-size-xxlrg,
+h4.f-size-xxlrg,
+h5.f-size-xxlrg {
+  font-size: 2.5rem;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+.btn {
+  padding: 0.5rem 1.2rem;
+  background-color: #1a7cb4;
+  color: #fff;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.btn.btn-m {
+  padding: 0.7rem 1.5rem;
+}
+
+.btn.btn-rounded {
+  padding: 1rem;
+  border-radius: 50%;
+}
+
+.btn:hover {
+  padding: 0.6rem 1.3rem;
+}
+
+.notification-msg-card {
+  position: fixed;
+  top: 5rem;
+  left: 5rem;
+  width: 400px;
+  z-index: 100;
+  visibility: hidden;
+  -webkit-transform: translate3d(0, -100%, 0);
+          transform: translate3d(0, -100%, 0);
+}
+
+.notification-msg-card.show {
+  visibility: visible;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.notification-msg-card .hdr {
+  padding: 1.3rem 0;
+  background: #c6c6c6;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.notification-msg-card .body {
+  padding: 2rem 1rem 2rem 1rem;
+  background: #f5f4f4;
+}
+
+.notification-msg-card .footer {
+  padding: 1rem 0 1rem 0;
+  background: #f5f4f4;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  position: relative;
+}
+
+.notification-msg-card .footer a {
+  position: absolute;
+  bottom: 1rem;
+}
+
+.notification-msg-card .footer a:nth-child(1) {
+  left: 2rem;
+}
+
+.notification-msg-card .footer a:nth-child(2) {
+  right: 2rem;
+}
+
+@media screen and (max-width: 720px) {
+  .hide-on-small {
+    display: none;
+  }
+  .hide-on-small-medium {
+    display: none;
+  }
+  .hide-on-small-large {
+    display: none;
+  }
+  .flx {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .grd-cl-4 {
+    -ms-grid-columns: (1fr)[1] !important;
+        grid-template-columns: repeat(1, 1fr) !important;
+  }
+}
+
+@media screen and (min-width: 720px) and (max-width: 1170px) {
+  .hide-on-medium {
+    display: none;
+  }
+  .hide-on-small-medium {
+    display: none;
+  }
+  .hide-on-medium-large {
+    display: none;
+  }
+  .flx {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 1171px) {
+  .hide-on-large {
+    display: none;
+  }
+  .hide-on-medium-large {
+    display: none;
+  }
+  .hide-on-small-large {
+    display: none;
+  }
+}
+/*# sourceMappingURL=main.css.map */
